@@ -1,0 +1,74 @@
+1)
+#include <stdio.h>
+
+int main() {
+char nomes[5][50]; // Array de 5 nomes com até 49 caracteres
+
+    // Leitura dos nomes
+    for (int i = 0; i < 5; i++) {
+        printf("Digite o nome %d: ", i + 1);
+        fgets(nomes[i], sizeof(nomes[i]), stdin);
+    }
+
+    // Exibição dos nomes
+    printf("\nNomes armazenados:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%s", nomes[i]);
+    }
+    return 0;
+}
+
+2)
+#include <stdio.h>
+
+int main() {
+float notas[10]; // Array para 10 notas
+
+    // Leitura das notas
+    for (int i = 0; i < 10; i++) {
+        printf("Digite a nota %d: ", i + 1);
+        scanf("%f", &notas[i]);
+    }
+
+    // Exibição das notas
+    printf("\nNotas armazenadas:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Nota %d: %.2f\n", i + 1, notas[i]);
+    }
+    return 0;
+}
+
+3)
+#include <stdio.h>
+
+int main() {
+float notas[10]; // Array para 10 notas
+float maior = 0, menor = 10, soma = 0; // Inicializa maior e menor
+
+    // Leitura das notas
+    for (int i = 0; i < 10; i++) {
+        printf("Digite a nota %d: ", i + 1);
+        scanf("%f", &notas[i]);
+        soma += notas[i]; // Soma as notas
+
+        // Atualiza maior e menor
+        if (notas[i] > maior) {
+            maior = notas[i];
+        }
+
+        if (notas[i] < menor) {
+            menor = notas[i];
+        }
+    }
+
+    // Cálculo da média
+    float media = soma / 10;
+
+    // Exibição dos resultados
+    printf("\nMaior nota: %.2f\n", maior);
+    printf("Menor nota: %.2f\n", menor);
+    printf("Média das notas: %.2f\n", media);
+
+    return 0;
+
+}
